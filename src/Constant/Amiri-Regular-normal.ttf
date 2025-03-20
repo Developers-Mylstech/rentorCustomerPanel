@@ -1,0 +1,3 @@
+const AmiriRegular = "data:font/ttf;base64,AAEAAAASAQAABA..."; // Paste the output here
+
+export default AmiriRegular;
