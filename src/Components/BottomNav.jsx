@@ -6,7 +6,7 @@ const BottomNav = ({ hamburgerOpen, setHamburgerOpen }) => {
 
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#0a448b] text-white flex justify-around items-center p-3 z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#0a448b] to-[#0e86bdcf] text-white flex justify-around items-center p-3 z-50">
       {/* Home Button */}
       <button
         onClick={() => navigate("/")}

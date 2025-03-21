@@ -74,8 +74,8 @@ const AssitServices = () => {
             doc.text('Job Card', pageWidth / 2, 40, { align: 'center'});
 
     // === Left and Right Section ===
-    const leftStartY = 60;
-    const rightStartY = 60;
+    const leftStartY = 40;
+    const rightStartY = 40;
     const lineHeight = 8;
     const rightAlign = pageWidth - margin - 50;
 
@@ -95,8 +95,8 @@ const AssitServices = () => {
     doc.text(`Next Service Date: ${data.Next_Service_Date || "N/A"}`, rightAlign-10, rightStartY + (lineHeight * 3)-6);
 
      // === Table Header ===
-     const tableStartY = billToStartY + 40;
-     doc.setFillColor(0, 200, 0);
+     const tableStartY = billToStartY + 20;
+     doc.setFillColor(60, 160, 60);
      doc.rect(margin, tableStartY, tableWidth, 10, 'F');
      doc.setFont('helvetica', 'bold');
      doc.text('Product Details', pageWidth / 2 , tableStartY + 7,{ align: 'center'} );
@@ -130,49 +130,215 @@ const AssitServices = () => {
      doc.text('', margin + 144, rowStartY+10 + 7);
 
 
-     doc.setFillColor(0, 200, 0);
+     doc.setFillColor(60, 160, 60);
      doc.rect(margin, tableStartY+30, tableWidth, 10, 'F');
      doc.setFont('helvetica', 'bold');
      doc.text('Part Used', pageWidth / 2 , tableStartY+30 + 7,{ align: 'center'} );
 
-     doc.rect(margin, rowStartY+30, 20, 10);
+     doc.rect(margin, rowStartY+30, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('SI.', margin + 2, rowStartY+30 + 7);
-     doc.rect(margin + 38, rowStartY+30, tableWidth/5-20, 10);
+     doc.text('Item Code', margin + 2, rowStartY+30 + 7);
+     doc.rect(margin + 38, rowStartY+30, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('Item Code', margin+ 2 + 38, rowStartY+30+ 7);
-     doc.rect(margin + 76, rowStartY+30, tableWidth/5-20, 10);
+     doc.text('Item Name', margin+ 2 + 38, rowStartY+30+ 7);
+     doc.rect(margin + 76, rowStartY+30, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('Item Name', margin+2 + 76, rowStartY+30 + 7);
-     doc.rect(margin+114, rowStartY+30, tableWidth/5-20, 10);
+     doc.text('Qty', margin+2 + 76, rowStartY+30 + 7);
+     doc.rect(margin+114, rowStartY+30, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('Qty', margin + 114 , rowStartY+30 + 7);
-     doc.rect(margin+152, rowStartY+30, tableWidth/5-20, 10);
+     doc.text('Rate', margin + 114+2 , rowStartY+30 + 7);
+     doc.rect(margin+152, rowStartY+30, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('Rate', margin + 144,rowStartY+30 + 7);
-     doc.rect(margin+152, rowStartY+30, tableWidth/5-20, 10);
-     doc.setFont('helvetica', 'normal');
-     doc.text('Rate', margin + 144,rowStartY+30 + 7);
+     doc.text('Amount', margin + 152+2,rowStartY+30 + 7);
+    
 
      doc.rect(margin, rowStartY+40, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('', margin + 2, rowStartY+40 + 7);
+     doc.text('M003200', margin + 2, rowStartY+40 + 7);
      doc.rect(margin + 38,rowStartY+40, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('', margin+ 2 + 38, rowStartY+40+ 7);
+     doc.text('PP Filter X', margin+ 2 + 38, rowStartY+40+ 7);
      doc.rect(margin + 76, rowStartY+40, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('', margin+2 + 76, rowStartY+40 + 7);
+     doc.text('1', margin+2 + 76, rowStartY+40 + 7);
      doc.rect(margin+114, rowStartY+40, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('', margin + 114 , rowStartY+40 + 7);
+     doc.text('00', margin + 114+2  , rowStartY+40 + 7);
      doc.rect(margin+152, rowStartY+40, tableWidth/5, 10);
      doc.setFont('helvetica', 'normal');
-     doc.text('', margin + 144,rowStartY+40 + 7);
+     doc.text('00', margin + 154+2 ,rowStartY+40 + 7);
+
+
+     doc.rect(margin, rowStartY+50, tableWidth/5, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('M003200', margin + 2, rowStartY+50 + 7);
+     doc.rect(margin + 38,rowStartY+50, tableWidth/5, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('PP Filter X', margin+ 2 + 38, rowStartY+50+ 7);
+     doc.rect(margin + 76, rowStartY+50, tableWidth/5, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('1', margin+2 + 76, rowStartY+50 + 7);
+     doc.rect(margin+114, rowStartY+50, tableWidth/5, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('00', margin + 114+2  , rowStartY+50 + 7);
+     doc.rect(margin+152, rowStartY+50, tableWidth/5, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('00', margin + 154+2 ,rowStartY+50 + 7);
+
+     doc.setFillColor(60, 160, 60);
+     doc.rect(margin, tableStartY+70, tableWidth/2, 10, 'F');
+     doc.setFont('helvetica', 'bold');
+     doc.text('Quality Details',60 , tableStartY+70 + 7,{ align: 'center'} );
+
+     doc.rect(margin, rowStartY+70, tableWidth/4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('TDS', margin + 2, rowStartY+70 + 7);
+     doc.rect(margin + 47.5,rowStartY+70, tableWidth/8, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Before', margin+ 2 + 50, rowStartY+70+ 7);
+     doc.rect(margin + 71.4, rowStartY+70, tableWidth/8, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('After', margin+2 + 73, rowStartY+70 + 7);
+
+     doc.rect(margin, rowStartY+80, tableWidth/4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Filter Water', margin + 2, rowStartY+80 + 7);
+     doc.rect(margin + 47.5,rowStartY+80, tableWidth/8, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('50', margin+ 2 + 50, rowStartY+80+ 7);
+     doc.rect(margin + 71.4, rowStartY+80, tableWidth/8, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('40', margin+2 + 73, rowStartY+80 + 7);
+
+     doc.rect(margin, rowStartY+90, tableWidth/4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin + 2, rowStartY+90 + 7);
+     doc.rect(margin+47.5, rowStartY+90, tableWidth/4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 70, rowStartY+90 + 7);
+
+
+
+
+
+     doc.setFillColor(60, 160, 60);
+     doc.rect(margin+tableWidth/2, tableStartY+70, tableWidth/2, 10, 'F');
+     doc.setFont('helvetica', 'bold');
+     doc.text('Checklist Items', 150 , tableStartY+70 + 7,{ align: 'center'} );
+     doc.rect(margin + tableWidth / 2, rowStartY + 80, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 80 + 7);
+     doc.rect(margin + 47.5 + tableWidth / 2, rowStartY + 80, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 80 + 7);
+     
+     doc.rect(margin + tableWidth / 2, rowStartY + 90, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 90 + 7);
+     doc.rect(margin + 47.5 + tableWidth / 2, rowStartY + 90, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 90 + 7);
+     
+     doc.rect(margin + tableWidth / 2, rowStartY + 70, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 70 + 7);
+     doc.rect(margin + 47.5 + tableWidth / 2, rowStartY + 70, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 70 + 7);
+
+     doc.setFillColor(60, 160, 60);
+     doc.rect(margin, tableStartY+110, tableWidth/2, 10, 'F');
+     doc.setFont('helvetica', 'bold');
+     doc.text('Technician Details ',58, tableStartY+110 + 7,{ align: 'center'} );
+
+     
+     doc.rect(margin , rowStartY + 110, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin+(tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 110 + 7);
+     doc.rect(margin+ 47.5 , rowStartY + 110, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 110 + 7);
+     
+     doc.rect(margin, rowStartY + 120, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin   + (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 120 + 7);
+     doc.rect(margin + 47.5 , rowStartY + 120, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5  + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 120 + 7);
+     
+     doc.rect(margin , rowStartY + 130, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin+ (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 130 + 7);
+     doc.rect(margin + 47.5, rowStartY + 130, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 130 + 7);
+
+     doc.rect(margin , rowStartY + 140, tableWidth / 4, 30);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tech Notes', margin+ (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 140 + 7);
+     doc.rect(margin + 47.5, rowStartY + 140, tableWidth / 4, 30);
+     doc.setFont('helvetica', 'normal');
+     doc.text('', margin + 47.5 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 140 + 7);
+
+
+
+     doc.setFillColor(60, 160, 60);
+     doc.rect(margin+tableWidth/2, tableStartY+110, tableWidth/2, 10, 'F');
+     doc.setFont('helvetica', 'bold');
+     doc.text('Attendee Details', 150 , tableStartY+110 + 7,{ align: 'center'} );
+
+     
+     doc.rect(margin + tableWidth / 2, rowStartY + 110, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 110 + 7);
+     doc.rect(margin + 47.5 + tableWidth / 2, rowStartY + 110, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 110 + 7);
+     
+     doc.rect(margin + tableWidth / 2, rowStartY + 120, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 120 + 7);
+     doc.rect(margin + 47.5 + tableWidth / 2, rowStartY + 120, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 120 + 7);
+     
+     doc.rect(margin + tableWidth / 2, rowStartY + 130, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Tap Water', margin + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('Tap Water')) / 2, rowStartY + 130 + 7);
+     doc.rect(margin + 47.5 + tableWidth / 2, rowStartY + 130, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('235', margin + 47.5 + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 130 + 7);
+     doc.rect(margin + 47.5 + tableWidth / 2, rowStartY + 140, tableWidth / 4, 10);
+     doc.setFont('helvetica', 'normal');
+     doc.text('', margin + 47.5 + tableWidth / 2 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 140 + 7);
+
+     doc.rect(margin  +tableWidth/2 , rowStartY + 150, tableWidth / 4, 20);
+     doc.setFont('helvetica', 'normal');
+     doc.text('Customer sign:', margin +tableWidth/2 +2, rowStartY + 150 + 7);
+     doc.rect(margin + 47.5+tableWidth/2, rowStartY + 150, tableWidth / 4, 20);
+     doc.setFont('helvetica', 'normal');
+     doc.text('', margin+tableWidth/2 + 47.5 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 140 + 7);
+
+     doc.setFillColor(60, 160, 60);
+     doc.rect(margin, tableStartY+180, tableWidth, 10, 'F');
+     doc.setFont('helvetica', 'bold');
+     doc.text('Thankyou For Choosing RentRo', 105 , tableStartY+180 + 7,{ align: 'center'} );
+
+     doc.rect(margin , rowStartY + 180, tableWidth , 5);
+     doc.setFont('helvetica', 'normal');
+     doc.text('', margin+tableWidth/2 + 47.5 + (tableWidth / 4 - doc.getTextWidth('235')) / 2, rowStartY + 180 + 7);
+
+     doc.rect(margin , rowStartY + 185, tableWidth , 10);
+     doc.setFont('helvetica', 'normal');
+     doc.setFontSize(10)
+     doc.text('Note: This is an e-document,does not required sign and stamp,to verify the document scan above QR code or Click Here', margin , rowStartY + 185 + 7);
+
+
+     
 
 
     // === Footer Section ===
-    const footerStartY = leftStartY + lineHeight * 12;
+    const footerStartY = leftStartY+140 + lineHeight * 12;
 
     doc.setDrawColor(0);
     doc.line(margin, footerStartY, pageWidth - margin, footerStartY);
@@ -268,7 +434,7 @@ const AssitServices = () => {
               Service #{service.sNo}
             </h3>
             <button
-              onClick={() => handleDownload(data)}
+              onClick={() => handleDownload(service)}
               className="text-[#0e86bdcf] border border-[#0e86bdcf] p-2 rounded-lg"
             >
               Download

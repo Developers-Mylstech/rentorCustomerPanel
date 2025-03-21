@@ -38,14 +38,14 @@ const Dashboard = () => {
         </h1>
 
         {/* User Profile & Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           {/* Profile Section */}
-          <div className="bg-white  p-6 rounded-lg shadow border border-[#0e86bd7a] ">
+          <div className="bg-white  p-6 rounded-lg shadow border border-[#0e86bd7a] parent-hover ">
           <div className="flex flex-col items-center relative">
   {/* User Icon */}
-  <div className="flex justify-center items-center rounded-full bg-blue-100 h-36 md:h-24 md:w-24 w-36 relative">
-    <FaUser className="w-14 h-14 text-[#0a448b] icon-rotate" />
-    <div className="mt-6 md:hidden flex justify-center absolute top-[43%] -right-2">
+  <div className="flex justify-center items-center rounded-full bg-blue-100 h-36 md:h-24 md:w-24 w-36 relative icon-rotate  ">
+    <FaUser className="w-14 h-14 text-[#0a448b] " />
+    <div className="mt-6 md:hidden flex justify-center absolute top-[43%] -right-2 ">
   <label className="cursor-pointer">
     <input
       type="file"
@@ -75,7 +75,7 @@ const Dashboard = () => {
 </div>
 
 {/* File Upload for Desktop */}
-<div className="mt-20 md:flex justify-between items-center hidden">
+<div className="mt-20 md:flex justify-between items-center hidden ">
   <input
     type="file"
     onChange={handleFileChange}

@@ -11,6 +11,7 @@
       }
    }
 
-.icon-rotate{
-    animation: animName 2s linear infinite;
+   .parent-hover:hover .icon-rotate {
+  animation: animName 2s linear infinite;
 }
+

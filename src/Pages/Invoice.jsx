@@ -375,8 +375,8 @@ const Invoice = () => {
     );
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen flex flex-col items-center ">
-            <div className="bg-white w-full max-w-5xl rounded-lg shadow-[0px_-8px_38px_-9px_rgba(0,_0,_0,_0.1)] p-6 ">
+        <div className="p-2 bg-gray-50 min-h-screen flex flex-col items-center ">
+            <div className="bg-white w-full max-w-5xl rounded-lg shadow-[0px_-8px_38px_-9px_rgba(0,_0,_0,_0.1)] p-2 ">
                 <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Customer Invoice</h1>
                 <div className="flex items-center gap-4 mb-6 justify-center">
                     <Dropdown
@@ -392,7 +392,7 @@ const Invoice = () => {
                 </div>
                 <DataTable
     value={invoices}
-    className="p-datatable-gridlines border rounded-md text-gray-600 hidden md:block p-2"
+    className="p-datatable-gridlines border rounded-md text-gray-600 hidden md:block p-4 m-2"
     paginator
     rows={5}
     rowsPerPageOptions={[5, 10, 20]}
@@ -463,16 +463,19 @@ const Invoice = () => {
     /* Styling for rows per page dropdown */
     .p-paginator .p-dropdown {
         background-color: white !important;
-        /* border: 1px solid #ccc; */
-        color: #333;
+
+        color: #0e86bdcf;
         padding: 2px !important;
-        margin-left:15px ;
+        margin-left:40px ;
+        border: 1px solid #0e86bdcf;
+        border-radius: 4px;
        
     
     }
     .p-paginator .p-dropdown .p-dropdown-label {
         color: #333;
         margin-right:10px ;
+        margin-left:4px
     }
     .p-paginator .p-dropdown .p-dropdown-trigger {
         color: #333;
