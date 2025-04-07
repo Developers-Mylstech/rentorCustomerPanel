@@ -124,7 +124,7 @@ const Dashboard = () => {
           <div className="hidden lg:block ">
             <table className="min-w-full bg-white border rounded-lg overflow-hidden shadow-md ">
               <thead>
-                <tr className="bg-[#0e86bdcf] text-white uppercase text-sm leading-normal">
+                <tr className=" text-[#0e86bdcf] bg-[#0e86bd44] uppercase text-sm leading-normal">
                   <th className="py-2 px-4 text-left">Code</th>
                   <th className="py-2 px-4 text-left">Name</th>
                   <th className="py-2 px-4 text-left">Due Amount</th>
@@ -137,22 +137,24 @@ const Dashboard = () => {
                     key={index}
                     className="border-b border-gray-200 hover:bg-gray-100"
                   >
-                    <td className="py-2 px-4 text-gray-500">{payment.code}</td>
-                    <td className="py-2 px-4 text-gray-500">{payment.name}</td>
-                    <td className="py-2 px-4 text-gray-500">{payment.amount}</td>
+                    <td className="py-2 px-4 text-gray-500 text-sm">{payment.code}</td>
+                    <td className="py-2 px-4 text-gray-500 text-sm">{payment.name}</td>
+                    <td className="py-2 px-4  "><div className="bg-purple-200 text-purple-500  py-2 w-16 text-center text-sm font-bold  rounded-lg">{payment.amount} </div> </td>
                     <td
                       onClick={() => handleNavigate(payment)}
-                      className="py-2 px-4 text-[#0e86bdcf] cursor-pointer hover:underline"
+                      className="py-2 px-4  cursor-pointer "
                     >
+                     <div className="text-[#0f4158cf]  hover:bg-[#0e86bd56]  bg-[#0e86bd2d] text-sm font-semibold py-2 w-16 rounded-lg text-center">
                       Pay Now
+                     </div>
                     </td>
                   </tr>
                 ))}
               </tbody>
               <tfoot>
-                <tr className="bg-[#0e86bdcf] border  text-white uppercase text-sm leading-normal">
-                  <th className="py-2 px-4 text-left">Total Due Amount</th>
-                  <td colSpan="3" className="py-2 px-4  font-semibold text-center">
+                <tr className=" bg-[#0e86bd44] bg-opacity-20 border  text-white uppercase text-sm leading-normal">
+                  <th className="py-2 px-4 text-left text-[#0e86bdcf]">Total Due Amount</th>
+                  <td colSpan="3" className="py-2 px-4  font-semibold text-center text-[#0e86bdcf]">
                     {totalAmount}
                   </td>
                 </tr>

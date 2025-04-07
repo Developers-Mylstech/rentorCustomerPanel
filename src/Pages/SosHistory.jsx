@@ -181,10 +181,10 @@ const Soshistory = () => {
       </div>
 
       {/* Table View for Large Screens */}
-      <div className="hidden lg:block overflow-x-auto rounded-lg">
-        <table className="w-full border-collapse border text-sm">
+      <div className="hidden lg:block overflow-x-auto rounded-lg ">
+        <table className="w-[100%] border-collapse border text-xs font-semibold  text-gray-600">
           <thead>
-            <tr className="bg-[#0e86bdcf] text-white text-left">
+            <tr className="bg-[#0e86bd31]  text-[#0e86bdcf] text-left">
               <th className="border px-4 py-2">Date</th>
               <th className="border px-4 py-2">Asset_Code</th>
               <th className="border px-4 py-2">Complaint_Type</th>
@@ -199,7 +199,7 @@ const Soshistory = () => {
           <tbody>
             {serviceData.map((data, index) => (
               <tr key={index} className="hover:bg-gray-50">
-                <td className="border px-4 py-2">{data.date}</td>
+                <td className="border px-4 py-2 ">{data.date}</td>
                 <td className="border px-4 py-2">{data.assetCode}</td>
                 <td className="border px-4 py-2">{data.complaintType}</td>
                 <td className="border px-4 py-2">{data.details}</td>
@@ -209,10 +209,10 @@ const Soshistory = () => {
                 <td className="border px-4 py-2">{data.complaintStatus}</td>
                 <td className="border px-4 py-2">
                   <div className="flex gap-2">
-                    <button className="bg-[#0e86bdcf] text-white rounded-lg p-2">
+                    <button className="bg-red-50  text-red-500 border border-red-500 font-bold rounded-lg p-2">
                       Delete
                     </button>
-                    <button className="bg-white text-[#0e86bdcf] border border-[#0e86bdcf] rounded-lg p-2">
+                    <button className="bg-violet-50 font-bold text-violet-500 border border-violet-500 rounded-lg p-2">
                       Details
                     </button>
                   </div>

@@ -367,7 +367,7 @@ const Invoice = () => {
 
     const downloadTemplate = (rowData) => (
         <button 
-            className="text-[#0e86bdcf] border border-[#0e86bdcf] p-2 rounded-lg my-2" 
+            className="text-green-700 border border-green-700 bg-green-100 hover:bg-green-200  p-2 rounded-lg my-2" 
             onClick={() => generatePDF(rowData)}
         >
             Download
@@ -393,41 +393,41 @@ const Invoice = () => {
                 <DataTable
     value={invoices}
     className="p-datatable-gridlines border rounded-md text-gray-600 hidden md:block p-4 m-2"
-    paginator
+    // paginator
     rows={5}
-    rowsPerPageOptions={[5, 10, 20]}
+    // rowsPerPageOptions={[5, 10, 20]}
     responsiveLayout="scroll"
 >
     {/* Date Column */}
     <Column 
         field="date" 
         header="Date" 
-        headerClassName="text-left font-medium" 
-        bodyClassName="text-left"
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
     />
 
     {/* Invoice Month Column */}
     <Column 
         field="month" 
         header="Invoice Month" 
-        headerClassName="text-left font-medium" 
-        bodyClassName="text-left"
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
     />
 
     {/* Invoice Amount Column */}
     <Column 
         field="amount" 
         header="Invoice Amount" 
-        headerClassName="text-left font-medium" 
-        bodyClassName="text-left"
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
     />
 
     {/* Actions Column */}
     <Column 
         body={downloadTemplate} 
         header="Actions" 
-        headerClassName="text-left font-medium" 
-        bodyClassName="text-left"
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
     />
 </DataTable>
 

@@ -370,7 +370,7 @@ const AssitServices = () => {
       <div className="overflow-x-auto hidden md:block rounded-md">
         <table className="w-full border-collapse border text-sm">
           <thead>
-            <tr className="bg-[#0e86bdcf] text-white text-left">
+            <tr className="bg-[#0e86bd21] text-[#0e86bdcf] text-left">
               <th className="border px-4 py-2">S.No</th>
               <th className="border px-4 py-2">Service_Date</th>
               <th className="border px-4 py-2">Technician_Name</th>
@@ -387,7 +387,7 @@ const AssitServices = () => {
           </thead>
           <tbody>
             {serviceData.map((data, index) => (
-              <tr key={index} className="hover:bg-gray-50 text-gray-500">
+              <tr key={index} className="hover:bg-gray-50 text-gray-500 text-sm font-semibold">
                 <td className="border px-4 py-2">{data.sNo}</td>
                 <td className="border px-4 py-2">{data.date}</td>
                 <td className="border px-4 py-2">
@@ -403,7 +403,7 @@ const AssitServices = () => {
                 </td>
                 <td className="border px-4 py-2">
                   {" "}
-                  <img src={data.attendeeSignature} alt="" />{" "}
+                  <img src={data.attendeeSignature} className="h-16 w-16" alt="" />{" "}
                 </td>
                 <td className="border px-4 py-2">{data.tdsBefore}</td>
                 <td className="border px-4 py-2">{data.tdsAfter}</td>
@@ -413,9 +413,9 @@ const AssitServices = () => {
                 <td className="border px-4 py-2 text-center">
                   <button
                     onClick={() => handleDownload(data)}
-                    className="text-[#0e86bdcf] border border-[#0e86bdcf] p-2 rounded-lg"
+                    className="text-green-700 border border-green-700 bg-green-100 hover:bg-green-200  p-2 rounded-lg my-2"
                   >
-                    Download
+                   Download
                   </button>
                 </td>
               </tr>

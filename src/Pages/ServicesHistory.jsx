@@ -76,7 +76,7 @@ const ServiceHistory = () => {
       <div className="hidden lg:block overflow-x-auto rounded-md">
         <table className="w-full border-collapse border text-sm ">
           <thead>
-            <tr className="bg-[#0e86bdcf] text-white text-left">
+            <tr className="bg-[#0e86bd2b] text-[#0e86bdcf]  text-left">
               <th className="border px-4 py-2 text-sm">Asset_Code</th>
               <th className="border px-4 py-2 text-sm">Asset_Name</th>
               <th className="border px-4 py-2">Commodity_Name</th>
@@ -91,23 +91,23 @@ const ServiceHistory = () => {
           <tbody>
             {serviceData.map((data, index) => (
               <tr key={index} className="hover:bg-gray-50">
-                <td className="border px-4 py-2 text-sm text-gray-500">{data.assetCode}</td>
-                <td className="border px-4 py-2 text-sm text-gray-500">{data.assetName}</td>
-                <td className="border px-4 py-2 text-sm text-gray-500">{data.commodityName}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.branch}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.lastService}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.serviceMode}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.nextService}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.notes}</td>
+                <td className="border px-4 py-2 text-sm text-gray-500 font-semibold">{data.assetCode}</td>
+                <td className="border px-4 py-2 text-sm text-gray-500 font-semibold">{data.assetName}</td>
+                <td className="border px-4 py-2 text-sm text-gray-500 font-semibold">{data.commodityName}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.branch}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.lastService}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.serviceMode}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.nextService}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.notes}</td>
                 <td className="border px-4 py-2 text-center text-gray-500">
                   <div className="flex items-center gap-2">
                     <button onClick={()=>handleDownload(data)} className="text-red-500">
                       <FaFilePdf size={20} />
                     </button>
-                    <button onClick={()=>navigate("/assitservices")}  className="bg-[#0e86bdcf] text-white px-3 py-1 rounded hover:bg-[#0aa3ebcf]text-sm">
+                    <button onClick={()=>navigate("/assitservices")}  className="bg-orange-50 text-orange-500 border font-bold border-orange-500   px-3 py-1 rounded hover:bg-[#0aa3ebcf]text-sm">
                       Service Details
                     </button>
-                    <button onClick={() => handleNewComplaint(data)} className="border border-[#0e86bdcf] text-[#0e86bdcf] px-3 py-1 rounded  text-sm">
+                    <button onClick={() => handleNewComplaint(data)} className="border border-[#0e60bdcf] font-bold text-[#0e60bdcf] bg-[#0e60bd2d] px-3 py-1 rounded  text-sm">
                       New Complaint
                     </button>
                   </div>

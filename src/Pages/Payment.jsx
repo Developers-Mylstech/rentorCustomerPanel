@@ -23,7 +23,7 @@ const Payment = () => {
           <thead>
             <tr className="bg-gray-100">
               {["Code", "Name", "Due Amount", "Pay Now"].map((header) => (
-                <th key={header} className="py-3 px-4 border-b text-left text-white bg-[#0e86bdcf]">
+                <th key={header} className="py-3 px-4 border-b text-left text-[#0e86bdcf] bg-[#0e86bd34]">
                   {header}
                 </th>
               ))}
@@ -32,15 +32,17 @@ const Payment = () => {
           <tbody>
             {paymentData.map((payment) => (
               <tr key={payment.code} className="hover:bg-gray-50">
-                <td className="py-2 px-4 border-b">{payment.code}</td>
-                <td className="py-2 px-4 border-b">{payment.name}</td>
-                <td className="py-2 px-4 border-b">{payment.amount}</td>
-                <td className="py-2 px-4 border-b">
+                <td className="py-2 px-4 border-b text-gray-600 text-sm font-semibold">{payment.code}</td>
+                <td className="py-2 px-4 border-b text-gray-600 text-sm font-semibold">{payment.name}</td>
+                <td className="py-2 px-4 border-b text-gray-600 text-sm font-semibold">{payment.amount}</td>
+                <td className="py-2 px-4 border-b text-gray-600 text-sm font-semibold">
                   <button
                     onClick={() => handleNavigate(payment)}
-                    className="text-[#0e86bdcf] hover:underline"
+                    className=""
                   >
-                    {payment.action}
+                    <div className="text-[#0f4158cf]  hover:bg-[#0e86bd56]  bg-[#0e86bd2d] text-sm font-semibold py-2 w-16 rounded-lg text-center">
+                      Pay Now
+                     </div>
                   </button>
                 </td>
               </tr>
