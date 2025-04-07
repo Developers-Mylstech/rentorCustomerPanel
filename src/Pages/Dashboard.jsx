@@ -43,16 +43,16 @@ const Dashboard = () => {
           <div className="bg-white  p-6 rounded-lg shadow border border-[#0e86bd7a] parent-hover ">
           <div className="flex flex-col items-center relative">
   {/* User Icon */}
-  <div className="flex justify-center items-center rounded-full bg-blue-100 h-36 md:h-24 md:w-24 w-36 relative icon-rotate  ">
-    <FaUser className="w-14 h-14 text-[#0a448b] " />
-    <div className="mt-6 md:hidden flex justify-center absolute top-[43%] -right-2 ">
+  <div className="flex justify-center items-center rounded-full bg-blue-100 h-36   w-36 relative   ">
+    <FaUser className="w-14 h-14 text-[#0a448b] icon-rotate" />
+    <div className="mt-6 flex justify-center absolute top-[43%] -right-2 ">
   <label className="cursor-pointer">
     <input
       type="file"
       onChange={handleFileChange}
       className="hidden"
     />
-    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0a448b]">
+    <div className="flex items-center justify-center w-8 h-8 p-1 rounded-full bg-[#0a448b]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-8 h-8 text-white  "
@@ -75,7 +75,7 @@ const Dashboard = () => {
 </div>
 
 {/* File Upload for Desktop */}
-<div className="mt-20 md:flex justify-between items-center hidden ">
+<div className="mt-20 flex justify-between items-center hidden ">
   <input
     type="file"
     onChange={handleFileChange}
