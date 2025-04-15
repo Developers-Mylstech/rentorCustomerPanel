@@ -60,10 +60,7 @@ const AssitServices = () => {
     const tableWidth = pageWidth - 2 * margin;
      const billToStartY = 45;
 
-    // === Header Section ===
     doc.addImage(logo, 'PNG', margin, 10, 40, 20);
-
-            // Arabic + Company Info
             doc.setFontSize(10);
             doc.setFont('helvetica', 'bold');
             doc.text("RENT RO ELECTRICAL & ELECTRONIC APPLIANCES RENTAL L.L.C", margin + 52, 15);
@@ -73,7 +70,6 @@ const AssitServices = () => {
             doc.setFont('helvetica', 'bold');
             doc.text('Job Card', pageWidth / 2, 40, { align: 'center'});
 
-    // === Left and Right Section ===
     const leftStartY = 60;
     const rightStartY = 60;
     const lineHeight = 8;
@@ -82,7 +78,6 @@ const AssitServices = () => {
     doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
 
-    // Left Side
     doc.text(`Customer ID: ${data.customerId}`, margin, leftStartY);
     doc.text(` ${data.attendeeName}`, margin, leftStartY + lineHeight-2);
     doc.text(`Branch Name: ${data.branchName || "N/A"}`, margin, leftStartY + (lineHeight * 2)-4);
@@ -186,13 +181,11 @@ const AssitServices = () => {
     doc.text("Service: +971506709963", margin, footerStartY + 18);
     doc.text("Sales: +971505828432", margin + 80, footerStartY + 18);
 
-    // Page Number
     doc.setFontSize(8);
     doc.text("1", pageWidth - margin - 10, footerStartY + 10);
     doc.text("Page 1/", pageWidth - margin - 20, footerStartY + 10);
     doc.text("Doc No:", pageWidth - margin - 40, footerStartY + 18);
 
-    // Open PDF
     const pdfUrl = doc.output("bloburl");
     window.open(pdfUrl, "_blank");
   };
@@ -332,10 +325,12 @@ const AssitServices = () => {
 
 export default AssitServices;
 
+
+
 // import { jsPDF } from "jspdf";
 // import logo from "../assets/renroLogo.png";
 // import PDFDocument from "../Constant/PDFDocument";
-// import {  pdf,PDFDownloadLink } from "@react-pdf/renderer";
+// import { pdf, PDFDownloadLink } from "@react-pdf/renderer";
 // const AssitServices = () => {
 //   const serviceData = [
 //     {
@@ -373,7 +368,7 @@ export default AssitServices;
 //         { code: 'P001', name: 'Compressor', qty: 1, rate: '150', amount: '150' },
 //         { code: 'P002', name: 'Fan Motor', qty: 2, rate: '100', amount: '200' },
 //       ],
-    
+
 //     },
 //     {
 //       sNo: 2,
@@ -506,7 +501,6 @@ export default AssitServices;
 //     doc.setFont("helvetica", "normal");
 //     doc.text(" Tyoe", margin + 2, rowStartY + 7);
 
-//     // === Footer Section ===
 //     const footerStartY = leftStartY + lineHeight * 12;
 
 //     doc.setDrawColor(0);
@@ -532,19 +526,22 @@ export default AssitServices;
 //     window.open(pdfUrl, "_blank");
 //   };
 
-//   const handleOpenPdf = () => {
+//   const handleOpenPdf = (data) => {
 //     console.log("Data for PDF:", data);
 //     if (!data) {
 //       console.error("Data is null or undefined");
 //       return;
 //     }
-  
-//     const blob = pdf(<PDFDocument data={data} />).toBlob();
-//     blob.then((file) => {
-//       const url = URL.createObjectURL(file);
-//       window.open(url);
-//     }).catch((error) => console.error("PDF Generation Error:", error));
+
+//     pdf(<PDFDocument key={Date.now()} data={data} />)
+//       .toBlob()
+//       .then((file) => {
+//         const url = URL.createObjectURL(file);
+//         window.open(url, "_blank");
+//       })
+//       .catch((error) => console.error("PDF Generation Error:", error));
 //   };
+
 
 //   return (
 //     <div className="max-w-6xl mx-auto p-4">
@@ -594,16 +591,14 @@ export default AssitServices;
 //                   {data.replacedItems || "N/A"}
 //                 </td>
 //                 <td className="border px-4 py-2 text-center">
-//     {/* Open in new tab */}
-//     <button
-//       onClick={() => handleOpenPdf(data)}
-//       className="text-[#0e86bdcf] border border-[#0e86bdcf] p-2 rounded-lg mr-2"
-//     >
-//       Open PDF
-//     </button>
+//                   <button
+//                     onClick={() => handleOpenPdf(data)}
 
-   
-//   </td>
+//                     className="text-[#0e86bdcf] border border-[#0e86bdcf] p-2 rounded-lg mr-2"
+//                   >
+//                     Open PDF
+//                   </button>
+//                 </td>
 //               </tr>
 //             ))}
 //           </tbody>
@@ -623,7 +618,7 @@ export default AssitServices;
 //                 onClick={() => handleDownload(service)}
 //                 className="text-[#0e86bdcf] border border-[#0e86bdcf] p-2 rounded-lg"
 //               >
-//                 Download
+//                 Download 
 //               </button>
 //             </div>
 //             <p className="text-sm text-gray-500 mb-1">
@@ -643,11 +638,10 @@ export default AssitServices;
 //             <p className="text-sm text-gray-500 mb-1">
 //               <span className="font-semibold">Status:</span>{" "}
 //               <span
-//                 className={`px-2 py-1 text-xs rounded-full ${
-//                   service.status === "Completed"
+//                 className={`px-2 py-1 text-xs rounded-full ${service.status === "Completed"
 //                     ? "bg-green-100 text-green-700"
 //                     : "bg-yellow-100 text-yellow-700"
-//                 }`}
+//                   }`}
 //               >
 //                 {service.status}
 //               </span>

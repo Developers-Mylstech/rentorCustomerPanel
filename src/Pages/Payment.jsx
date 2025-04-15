@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ReceiptVoucher from "./RecieptVoucher";
 
 const Payment = () => {
   const paymentData = [
@@ -43,13 +44,22 @@ const Payment = () => {
                     {payment.action}
                   </button>
                 </td>
+                <td className="py-2 px-4 border-b">
+                  {/* <button
+                    onClick={() => handleNavigate(payment)}
+                    className="text-[#0e86bdcf] hover:underline"
+                  >
+                   Download
+                  </button> */}
+                  <ReceiptVoucher/>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      {/* Mobile View - Card */}
+
       <div className="md:hidden space-y-4">
         {paymentData.map((payment) => (
           <div key={payment.code} className="bg-white shadow rounded-lg p-4 border">
