@@ -124,7 +124,7 @@ const Header = () => {
         </div>
 
         {/* Sidebar Menu */}
-        <div className="flex flex-col space-y-10 items-center mt-6">
+        <div className="flex flex-col space-y-4 items-center mt-6">
           {/* Account Dropdown */}
           <div className="relative w-full max-w-xs">
             <button
@@ -147,7 +147,7 @@ const Header = () => {
                 </Link>
                 <Link
                   to="/payment"
-                  className="block px-4 py-2 hover:text-white"
+                  className="block px-4 py-1 hover:text-white"
                   onClick={() => {
                     setAccountOpen(false);
                     setHamburgerOpen(false);
@@ -162,7 +162,7 @@ const Header = () => {
           {/* Service Link */}
           <Link
             to="/service-history"
-            className="w-full text-center py-2"
+            className="w-full text-center py-1"
             onClick={() => setHamburgerOpen(false)}
           >
             Service

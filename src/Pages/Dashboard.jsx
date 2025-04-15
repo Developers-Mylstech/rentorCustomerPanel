@@ -38,21 +38,21 @@ const Dashboard = () => {
         </h1>
 
         {/* User Profile & Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           {/* Profile Section */}
-          <div className="bg-white  p-6 rounded-lg shadow border border-[#0e86bd7a] ">
+          <div className="bg-white  p-6 rounded-lg shadow border border-[#0e86bd7a] parent-hover ">
           <div className="flex flex-col items-center relative">
   {/* User Icon */}
-  <div className="flex justify-center items-center rounded-full bg-blue-100 h-36 md:h-24 md:w-24 w-36 relative">
+  <div className="flex justify-center items-center rounded-full bg-blue-100 h-36   w-36 relative   ">
     <FaUser className="w-14 h-14 text-[#0a448b] icon-rotate" />
-    <div className="mt-6 md:hidden flex justify-center absolute top-[43%] -right-2">
+    <div className="mt-6 flex justify-center absolute top-[43%] -right-2 ">
   <label className="cursor-pointer">
     <input
       type="file"
       onChange={handleFileChange}
       className="hidden"
     />
-    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0a448b]">
+    <div className="flex items-center justify-center w-8 h-8 p-1 rounded-full bg-[#0a448b]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-8 h-8 text-white  "
@@ -75,7 +75,7 @@ const Dashboard = () => {
 </div>
 
 {/* File Upload for Desktop */}
-<div className="mt-20 md:flex justify-between items-center hidden">
+<div className="mt-20 flex justify-between items-center hidden ">
   <input
     type="file"
     onChange={handleFileChange}
@@ -124,7 +124,7 @@ const Dashboard = () => {
           <div className="hidden lg:block ">
             <table className="min-w-full bg-white border rounded-lg overflow-hidden shadow-md ">
               <thead>
-                <tr className="bg-[#0e86bdcf] text-white uppercase text-sm leading-normal">
+                <tr className=" text-[#0e86bdcf] bg-[#0e86bd44] uppercase text-sm leading-normal">
                   <th className="py-2 px-4 text-left">Code</th>
                   <th className="py-2 px-4 text-left">Name</th>
                   <th className="py-2 px-4 text-left">Due Amount</th>
@@ -137,22 +137,24 @@ const Dashboard = () => {
                     key={index}
                     className="border-b border-gray-200 hover:bg-gray-100"
                   >
-                    <td className="py-2 px-4 text-gray-500">{payment.code}</td>
-                    <td className="py-2 px-4 text-gray-500">{payment.name}</td>
-                    <td className="py-2 px-4 text-gray-500">{payment.amount}</td>
+                    <td className="py-2 px-4 text-gray-500 text-sm">{payment.code}</td>
+                    <td className="py-2 px-4 text-gray-500 text-sm">{payment.name}</td>
+                    <td className="py-2 px-4  "><div className="bg-purple-200 text-purple-500  py-2 w-16 text-center text-sm font-bold  rounded-lg">{payment.amount} </div> </td>
                     <td
                       onClick={() => handleNavigate(payment)}
-                      className="py-2 px-4 text-[#0e86bdcf] cursor-pointer hover:underline"
+                      className="py-2 px-4  cursor-pointer "
                     >
+                     <div className="text-[#0f4158cf]  hover:bg-[#0e86bd56]  bg-[#0e86bd2d] text-sm font-semibold py-2 w-16 rounded-lg text-center">
                       Pay Now
+                     </div>
                     </td>
                   </tr>
                 ))}
               </tbody>
               <tfoot>
-                <tr className="bg-[#0e86bdcf] border  text-white uppercase text-sm leading-normal">
-                  <th className="py-2 px-4 text-left">Total Due Amount</th>
-                  <td colSpan="3" className="py-2 px-4  font-semibold text-center">
+                <tr className=" bg-[#0e86bd44] bg-opacity-20 border  text-white uppercase text-sm leading-normal">
+                  <th className="py-2 px-4 text-left text-[#0e86bdcf]">Total Due Amount</th>
+                  <td colSpan="3" className="py-2 px-4  font-semibold text-center text-[#0e86bdcf]">
                     {totalAmount}
                   </td>
                 </tr>

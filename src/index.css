@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 @keyframes animName {
-    0%{
-       transform: rotateY(0deg);
-      }
-   100%{
-       transform: rotateY(360deg);
-      }
+   0% {
+     transform: rotateY(0deg);
    }
+   14.28% {
+     transform: rotateY(360deg); /* 2s out of 14s = ~14.28% */
+   }
+   100% {
+     transform: rotateY(360deg);
+   }
+ }
+ 
+  .icon-rotate {
+   animation: animName 12s linear infinite;
+ }
 
-.icon-rotate{
-    animation: animName 2s linear infinite;
-}

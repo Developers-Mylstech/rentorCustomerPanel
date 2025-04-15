@@ -366,8 +366,8 @@ const Invoice = () => {
 
 
     const downloadTemplate = (rowData) => (
-        <button
-            className="text-[#0e86bdcf] border border-[#0e86bdcf] p-2 rounded-lg my-2"
+        <button 
+            className="text-green-700 border border-green-700 bg-green-100 hover:bg-green-200  p-2 rounded-lg my-2" 
             onClick={() => generatePDF(rowData)}
         >
             Download
@@ -375,9 +375,9 @@ const Invoice = () => {
     );
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen flex flex-col items-center ">
-            <div className="bg-white w-full max-w-5xl rounded-lg shadow-[0px_-8px_38px_-9px_rgba(0,_0,_0,_0.1)] p-6 ">
-                <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Customer Invoic</h1>
+        <div className="p-2 bg-gray-50 min-h-screen flex flex-col items-center ">
+            <div className="bg-white w-full max-w-5xl rounded-lg shadow-[0px_-8px_38px_-9px_rgba(0,_0,_0,_0.1)] p-2 ">
+                <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Customer Invoice</h1>
                 <div className="flex items-center gap-4 mb-6 justify-center">
                     <Dropdown
                         value={selectedCustomer}
@@ -391,50 +391,45 @@ const Invoice = () => {
                     <button label="Submit" className="p-button-primary px-6 py-2 text-white bg-[#0e86bdcf] rounded-lg" >Submit</button>
                 </div>
                 <DataTable
-                    stripedRows={true}
-                    value={invoices}
-                    className="p-datatable-gridlines border rounded-md text-gray-600 hidden md:block p-2"
-                    paginator
-                    rows={5}
-                    rowsPerPageOptions={[5, 10, 20]}
-                    responsiveLayout="scroll"
-                >
-                    {/* Date Column */}
-                    <Column
-                        field="date"
-                        header="Date"
-                        className='border'
-                        headerClassName="text-left font-medium"
-                        bodyClassName="text-left"
-                    />
+    value={invoices}
+    className="p-datatable-gridlines border rounded-md text-gray-600 hidden md:block p-4 m-2"
+    // paginator
+    rows={5}
+    // rowsPerPageOptions={[5, 10, 20]}
+    responsiveLayout="scroll"
+>
+    {/* Date Column */}
+    <Column 
+        field="date" 
+        header="Date" 
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
+    />
 
-                    {/* Invoice Month Column */}
-                    <Column
-                        field="month"
-                         className='border'
-                        header="Invoice Month"
-                        headerClassName="text-left font-medium"
-                        bodyClassName="text-left"
-                    />
+    {/* Invoice Month Column */}
+    <Column 
+        field="month" 
+        header="Invoice Month" 
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
+    />
 
-                    {/* Invoice Amount Column */}
-                    <Column
-                        field="amount"
-                        header="Invoice Amount"
-                         className='border'
-                        headerClassName="text-left font-medium"
-                        bodyClassName="text-left"
-                    />
+    {/* Invoice Amount Column */}
+    <Column 
+        field="amount" 
+        header="Invoice Amount" 
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
+    />
 
-                    {/* Actions Column */}
-                    <Column
-                        body={downloadTemplate}
-                        header="Actions"
-                         className='border'
-                        headerClassName="text-left font-medium"
-                        bodyClassName="text-left"
-                    />
-                </DataTable>
+    {/* Actions Column */}
+    <Column 
+        body={downloadTemplate} 
+        header="Actions" 
+        headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
+        bodyClassName="text-left text-sm font-semibold"
+    />
+</DataTable>
 
 
 
@@ -468,16 +463,19 @@ const Invoice = () => {
     /* Styling for rows per page dropdown */
     .p-paginator .p-dropdown {
         background-color: white !important;
-        /* border: 1px solid #ccc; */
-        color: #333;
+
+        color: #0e86bdcf;
         padding: 2px !important;
-        margin-left:15px ;
+        margin-left:40px ;
+        border: 1px solid #0e86bdcf;
+        border-radius: 4px;
        
     
     }
     .p-paginator .p-dropdown .p-dropdown-label {
         color: #333;
         margin-right:10px ;
+        margin-left:4px
     }
     .p-paginator .p-dropdown .p-dropdown-trigger {
         color: #333;

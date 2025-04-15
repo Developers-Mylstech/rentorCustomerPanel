@@ -1,8 +1,43 @@
 import { FaFilePdf } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { jsPDF } from "jspdf";
+import certificate from "../assets/certificate.jpg"
 
 const ServiceHistory = () => {
   const navigate = useNavigate();
+
+  const handleDownload = (data) => {
+    const doc = new jsPDF({
+      orientation: 'landscape', // Ensures wider layout
+      unit: 'mm',
+      format: [297, 180], // Increased width and decreased height
+    });
+  
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+  
+    // Add image to fill the customized rectangular page
+    doc.addImage(certificate, 'PNG', 0, 0, pageWidth, pageHeight);
+  
+    doc.setFontSize(22);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(255, 0, 0)
+  
+    // Center the text horizontally
+    const centerX = (text) => (pageWidth - doc.getTextWidth(text)) / 2;
+  
+    doc.text(data.code, centerX(data.code), 80);
+    doc.text(data.assetName, centerX(data.assetName), 90);
+    doc.text(data.branch, centerX(data.branch), 100);
+  
+    // Open PDF
+    const pdfUrl = doc.output("bloburl");
+    window.open(pdfUrl, "_blank");
+  };
+  
+  
+  
+
   const serviceData = [
     {
       assetCode: "ECO0602",
@@ -13,6 +48,8 @@ const ServiceHistory = () => {
       serviceMode: "90",
       nextService: "22-05-2025",
       notes: "",
+      code:"120202A0003"
+
  
     },
   ];
@@ -39,7 +76,7 @@ const ServiceHistory = () => {
       <div className="hidden lg:block overflow-x-auto rounded-md">
         <table className="w-full border-collapse border text-sm ">
           <thead>
-            <tr className="bg-[#0e86bdcf] text-white text-left">
+            <tr className="bg-[#0e86bd2b] text-[#0e86bdcf]  text-left">
               <th className="border px-4 py-2 text-sm">Asset_Code</th>
               <th className="border px-4 py-2 text-sm">Asset_Name</th>
               <th className="border px-4 py-2">Commodity_Name</th>
@@ -54,23 +91,23 @@ const ServiceHistory = () => {
           <tbody>
             {serviceData.map((data, index) => (
               <tr key={index} className="hover:bg-gray-50">
-                <td className="border px-4 py-2 text-sm text-gray-500">{data.assetCode}</td>
-                <td className="border px-4 py-2 text-sm text-gray-500">{data.assetName}</td>
-                <td className="border px-4 py-2 text-sm text-gray-500">{data.commodityName}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.branch}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.lastService}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.serviceMode}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.nextService}</td>
-                <td className="border px-4 py-2 text-gray-500">{data.notes}</td>
+                <td className="border px-4 py-2 text-sm text-gray-500 font-semibold">{data.assetCode}</td>
+                <td className="border px-4 py-2 text-sm text-gray-500 font-semibold">{data.assetName}</td>
+                <td className="border px-4 py-2 text-sm text-gray-500 font-semibold">{data.commodityName}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.branch}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.lastService}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.serviceMode}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.nextService}</td>
+                <td className="border px-4 py-2 text-gray-500 font-semibold">{data.notes}</td>
                 <td className="border px-4 py-2 text-center text-gray-500">
                   <div className="flex items-center gap-2">
-                    <button className="text-red-500">
+                    <button onClick={()=>handleDownload(data)} className="text-red-500">
                       <FaFilePdf size={20} />
                     </button>
-                    <button onClick={()=>navigate("/assitservices")}  className="bg-[#0e86bdcf] text-white px-3 py-1 rounded hover:bg-[#0aa3ebcf]text-sm">
+                    <button onClick={()=>navigate("/assitservices")}  className="bg-orange-50 text-orange-500 border font-bold border-orange-500   px-3 py-1 rounded hover:bg-[#0aa3ebcf]text-sm">
                       Service Details
                     </button>
-                    <button onClick={() => handleNewComplaint(data)} className="border border-[#0e86bdcf] text-[#0e86bdcf] px-3 py-1 rounded  text-sm">
+                    <button onClick={() => handleNewComplaint(data)} className="border border-[#0e60bdcf] font-bold text-[#0e60bdcf] bg-[#0e60bd2d] px-3 py-1 rounded  text-sm">
                       New Complaint
                     </button>
                   </div>
@@ -126,7 +163,7 @@ const ServiceHistory = () => {
             {/* Action Buttons */}
             <div className="mt-4 flex justify-evenly items-center gap-2">
              <div>
-             <button className="text-red-500">
+             <button onClick={()=>handleDownload(data)}  className="text-red-500">
                 <FaFilePdf size={20} />
               </button>
              </div>
