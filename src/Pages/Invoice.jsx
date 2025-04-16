@@ -207,6 +207,8 @@ import { jsPDF } from 'jspdf';
 import { classNames } from 'primereact/utils';
 import logo from "../assets/renroLogo.png"
 import QRCode from 'qrcode';
+import 'primereact/resources/themes/lara-light-blue/theme.css'; // or any other theme
+import 'primereact/resources/primereact.min.css';
 
 
 const Invoice = () => {
@@ -396,14 +398,15 @@ const Invoice = () => {
     // paginator
     rows={5}
     // rowsPerPageOptions={[5, 10, 20]}
-    responsiveLayout="scroll"
+    // responsiveLayout="scroll"
+    stripedRows={true}
 >
     {/* Date Column */}
     <Column 
         field="date" 
         header="Date" 
         headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
-        bodyClassName="text-left text-sm font-semibold"
+        bodyClassName="text-left text-sm font-semibold border-b"
     />
 
     {/* Invoice Month Column */}
@@ -411,7 +414,7 @@ const Invoice = () => {
         field="month" 
         header="Invoice Month" 
         headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
-        bodyClassName="text-left text-sm font-semibold"
+        bodyClassName="text-left text-sm font-semibold border-b"
     />
 
     {/* Invoice Amount Column */}
@@ -419,7 +422,7 @@ const Invoice = () => {
         field="amount" 
         header="Invoice Amount" 
         headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
-        bodyClassName="text-left text-sm font-semibold"
+        bodyClassName="text-left text-sm font-semibold border-b"
     />
 
     {/* Actions Column */}
@@ -427,7 +430,7 @@ const Invoice = () => {
         body={downloadTemplate} 
         header="Actions" 
         headerClassName="text-left bg-[#0e86bd1a] text-[#0e86bdcf] p-2" 
-        bodyClassName="text-left text-sm font-semibold"
+        bodyClassName="text-left text-sm font-semibold  border-b "
     />
 </DataTable>
 
@@ -436,7 +439,7 @@ const Invoice = () => {
 
                 <div className="flex flex-col gap-4 md:hidden w-full">
                     {invoices.map((invoice, index) => (
-                        <div key={index} className="border border-gray-300 rounded-lg p-4 bg-[#80b2ca60] shadow-md w-full mx-auto">
+                        <div key={index} className="border border-gray-300   rounded-lg p-4 bg-[#80b2ca60] shadow-md w-full mx-auto">
                             <div className="flex justify-between items-center mb-2">
                                 <span className="text-gray-800 font-semibold">{invoice.month}</span>
                                 <button

@@ -18,7 +18,7 @@ const AssitServices = () => {
       tdsBefore: 50,
       tdsAfter: 40,
       waterSource: 235,
-      replacedItems: "PP Filter 10X2.5, GAC 10X2.5",
+      // replacedItems: "PP Filter 10X2.5, GAC 10X2.5",
       branchName:"Home Unit",
       jobId:" SRV/1717/5",
       jobType:"Installation",
@@ -43,7 +43,7 @@ const AssitServices = () => {
       tdsBefore: 70,
       tdsAfter: 70,
       waterSource: 180,
-      replacedItems: "PP Filter 10X2.5",
+      // replacedItems: "PP Filter 10X2.5",
       branchName:"Home Unit",
       jobId:" SRV/1717/5",
       jobType:"Installation",
@@ -376,7 +376,7 @@ const AssitServices = () => {
               <th className="border px-4 py-2">TDS_Before</th>
               <th className="border px-4 py-2">TDS_After</th>
               <th className="border px-4 py-2">Replaced_Items</th>
-              <th className="border px-4 py-2 text-center">Actions</th>
+              <th className="border px-4 py-2 text-center">Job Card</th>
             </tr>
           </thead>
           <tbody>
