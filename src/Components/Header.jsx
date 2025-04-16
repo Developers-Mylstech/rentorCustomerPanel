@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <>
       {/* Top Header */}
-      <header className="bg-gradient-to-t from-[#0a448b] to-[#0e86bdcf] text-white sticky top-0 left-0 right-0 px-8 rounded-b-xl z-50">
+      <header className="bg-gradient-to-t from-blue-500 to-[#0e86bdcf] text-white sticky top-0 left-0 right-0 px-8 rounded-b-xl z-50">
         <div className="p-4 flex justify-between items-center max-w-5xl mx-auto">
           {/* Logo */}
           <div

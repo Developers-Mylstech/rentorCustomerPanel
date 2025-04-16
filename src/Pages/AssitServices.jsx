@@ -358,7 +358,7 @@ const AssitServices = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
+    <div className=" md:mx-10 my-5 p-4">
       <h2 className="text-xl font-semibold mb-4">Assets Service Details</h2>
 
       <div className="overflow-x-auto hidden md:block rounded-md">
@@ -368,15 +368,13 @@ const AssitServices = () => {
               <th className="border px-4 py-2">S.No</th>
               <th className="border px-4 py-2">Service_Date</th>
               <th className="border px-4 py-2">Technician_Name</th>
-              <th className="border px-4 py-2">Amount</th>
-              <th className="border px-4 py-2">Status</th>
               <th className="border px-4 py-2">Attendee_Name</th>
               <th className="border px-4 py-2">Attendee_Mob</th>
               <th className="border px-4 py-2">Attendee_Sign</th>
               <th className="border px-4 py-2">TDS_Before</th>
               <th className="border px-4 py-2">TDS_After</th>
-              <th className="border px-4 py-2">Replaced_Items</th>
-              <th className="border px-4 py-2 text-center">Actions</th>
+              {/* <th className="border px-4 py-2">Replaced_Items</th> */}
+              <th className="border px-4 py-2 text-center">Job Card</th>
             </tr>
           </thead>
           <tbody>
@@ -387,8 +385,6 @@ const AssitServices = () => {
                 <td className="border px-4 py-2">
                   {data.technicianName || "N/A"}
                 </td>
-                <td className="border px-4 py-2">{data.amount}</td>
-                <td className="border px-4 py-2">{data.status}</td>
                 <td className="border px-4 py-2">
                   {data.attendeeName || "N/A"}
                 </td>
@@ -401,9 +397,9 @@ const AssitServices = () => {
                 </td>
                 <td className="border px-4 py-2">{data.tdsBefore}</td>
                 <td className="border px-4 py-2">{data.tdsAfter}</td>
-                <td className="border px-4 py-2">
+                {/* <td className="border px-4 py-2">
                   {data.replacedItems || "N/A"}
-                </td>
+                </td> */}
                 <td className="border px-4 py-2 text-center">
                   <button
                     onClick={() => handleDownload(data)}

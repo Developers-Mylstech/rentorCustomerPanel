@@ -58,7 +58,7 @@ const ServiceHistory = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
+    <div className="md:mx-10 my-5 p-4">
       {/* Title */}
       <h1 className="text-3xl font-bold mb-8">Assets List</h1>
 

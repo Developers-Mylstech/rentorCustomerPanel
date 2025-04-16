@@ -18,12 +18,11 @@ const Payment = () => {
     <div className="max-w-5xl mx-auto p-4">
       <h1 className="text-3xl font-bold mb-8 text-gray-900 my-4">Payment History</h1>
 
-      {/* Desktop View - Table */}
       <div className="hidden md:block bg-white rounded-lg shadow overflow-x-auto">
         <table className="min-w-full border border-gray-200">
           <thead>
             <tr className="bg-gray-100">
-              {["Code", "Name", "Due Amount", "Pay Now"].map((header) => (
+              {["Code", "Name", "Due Amount", "Pay Now", "Reciept"].map((header) => (
                 <th key={header} className="py-3 px-4 border-b text-left text-[#0e86bdcf] bg-[#0e86bd34]">
                   {header}
                 </th>
